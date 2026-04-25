@@ -1,6 +1,9 @@
 # genAI_assist_websearch
 Gen AI web search tool
 
+# General use
+docker compose up -d --build
+
 
 # Searxng
 # setup
