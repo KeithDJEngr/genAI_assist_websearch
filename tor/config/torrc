@@ -1,0 +1,4 @@
+DataDirectory /var/lib/tor
+SOCKSPort 0.0.0.0:9050
+ControlPort 9051
+CookieAuthentication 1

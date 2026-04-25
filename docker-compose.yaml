@@ -1,0 +1,24 @@
+services:
+  tor:
+    build: ./tor
+    user: "1000:1000"
+    container_name: tor
+    ports:
+      - 9050:9050
+      - 9051:9051
+    volumes:
+      - ./tor/config:/etc/tor:ro
+      - ./tor/data:/var/lib/tor
+    restart: unless-stopped
+
+  searxng:
+    image: docker.io/searxng/searxng:latest
+    container_name: searxng
+    ports:
+      # Don't need - 9050:9050
+      # it doesn't need to be outgoing to the base computer, can work internally to docker
+      - 8080:8080
+    volumes:
+      - ./searxng/config:/etc/searxng
+      - ./searxng/data:/var/cache/searxng
+    restart: unless-stopped
