@@ -8,6 +8,8 @@ docker compose up -d --build
 # Searxng
 # setup
 sudo chown -R 977:977 searxng/config/ searxng/data/
+# test
+curl 'http://localhost:8080/search?q=test&format=json'
 # ensure
 in data/settings.json
 search/formats
